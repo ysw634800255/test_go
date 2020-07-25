@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="{{urlfor "AddListYeController.get"}}">添加</a>
+<table border="1px">
+    <thread>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>删除</th>
+    </thread>
+
+
+    {{range $v := .data}}
+        <tr>
+            <th>{{$v.Name}}</th>
+            <th>{{$v.Age}}</th>
+            <th><a href="{{urlfor "DelController.Get"}}?id={{$v.Id}}" style="text-decoration: none;">-</a></th>
+        </tr>
+    {{end}}
+</table>
+</body>
+</html>
